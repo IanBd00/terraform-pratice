@@ -43,10 +43,12 @@ jobs:
       - name: Terraform Plan
         run: |
           terraform plan -input=false \
-            -var="ssh_public_key_path=/tmp/oci_keys/ssh_key.pub"
+            -var="ssh_public_key_path=/tmp/oci_keys/ssh_key.pub" \
+            -var="private_key_path="
 
       - name: Terraform Apply
         if: github.ref == 'refs/heads/main' && github.event_name == 'push'
         run: |
           terraform apply -auto-approve -input=false \
-            -var="ssh_public_key_path=/tmp/oci_keys/ssh_key.pub"
+            -var="ssh_public_key_path=/tmp/oci_keys/ssh_key.pub" \
+            -var="private_key_path="
