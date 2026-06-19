@@ -16,7 +16,15 @@ variable "fingerprint" {
 variable "private_key_path" {
   description = "The path to the private key file."
   type        = string
+  default = null
 }
+
+variable "private_key" {
+  type = string
+  default = null
+  sensitive = true
+}
+
 
 variable "region" {
   description = "The region to use for API calls."

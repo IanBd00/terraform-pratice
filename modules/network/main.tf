@@ -29,7 +29,7 @@ resource "oci_core_route_table" "public" {
 }
 
 resource "oci_core_route_table" "private"{
-    display_name = "RT-PRIVATE-${var.vcn_name}"
+    display_name = "PRIVATE-RT-${var.vcn_name}"
     compartment_id = var.compartment_id
     vcn_id = oci_core_vcn.this.id
 
