@@ -37,6 +37,8 @@ jobs:
 
       - name: Terraform Init
         run: terraform init
+        env:
+          OCI_private_key_path: /tmp/oci_keys/oci_api_key.pem
 
       - name: Terraform Validate
         run: terraform validate

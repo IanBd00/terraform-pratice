@@ -10,11 +10,6 @@ terraform{
         bucket = "tf-state-bucket"
         key = "gnexum/terraform.tfstate"
         namespace = "grgxeup22eul"
-
-        tenancy_ocid = "ocid1.tenancy.oc1..aaaaaaaane6guqzdfn4a7mf2uozeebkcummsbicm4lzccrqmijsbhzvm6oga"
-        user_ocid = "ocid1.user.oc1..aaaaaaaaskoxhq6j6iqmfkzhaq4alhwpwflssrwdxgqg2uwmomyyvxfir37a"
-        fingerprint = "ba:2f:cc:10:e2:71:28:6b:92:a0:2f:3f:f4:c1:21:fd"
-        private_key_path = "C:/Users/ian.bello/Documents/KEYS/API_KEY/oci_api_key.pem"
         region = "sa-saopaulo-1"
     }
 }
