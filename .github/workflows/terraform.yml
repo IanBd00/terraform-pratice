@@ -9,20 +9,13 @@ on:
 jobs:
   terraform:
     runs-on: ubuntu-latest
-
     env:
       TF_VAR_tenancy_ocid: ${{ secrets.OCI_TENANCY_OCID }}
       TF_VAR_user_ocid: ${{ secrets.OCI_USER_OCID }}
       TF_VAR_fingerprint: ${{ secrets.OCI_FINGERPRINT }}
       TF_VAR_private_key: ${{ secrets.OCI_PRIVATE_KEY }}
       TF_VAR_region: ${{ secrets.OCI_REGION }}
-
-      OCI_TENANCY_OCID: ${{ secrets.OCI_TENANCY_OCID }}
-      OCI_USER_OCID: ${{ secrets.OCI_USER_OCID }}
-      OCI_FINGERPRINT: ${{ secrets.OCI_FINGERPRINT }}
-      OCI_PRIVATE_KEY: ${{ secrets.OCI_PRIVATE_KEY }}
-      OCI_REGION: ${{ secrets.OCI_REGION }}
-
+      OCI_private_key_path: /tmp/oci_keys/oci_api_key.pem   # <- adiciona aqui, vale para TODOS os steps
     steps:
       - name: Checkout código
         uses: actions/checkout@v4
@@ -37,8 +30,6 @@ jobs:
 
       - name: Terraform Init
         run: terraform init
-        env:
-          OCI_private_key_path: /tmp/oci_keys/oci_api_key.pem
 
       - name: Terraform Validate
         run: terraform validate
@@ -49,3 +40,9 @@ jobs:
       - name: Terraform Apply
         if: github.ref == 'refs/heads/main' && github.event_name == 'push'
         run: terraform apply -auto-approve -input=false
+
+      - name: Debug - verificar chave (temporário)
+        run: |
+          head -1 /tmp/oci_keys/oci_api_key.pem
+          tail -1 /tmp/oci_keys/oci_api_key.pem
+          wc -l /tmp/oci_keys/oci_api_key.pem
