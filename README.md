@@ -84,7 +84,7 @@ project-1/
 | `terraform.tfstate`            | Arquivo de estado do Terraform                                                              |
 | `terraform.tfstate.backup`     | Backup automático do estado do Terraform                                                    |
 
-```
+
 
 ### Arquitetura
 
