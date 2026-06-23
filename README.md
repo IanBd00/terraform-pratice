@@ -37,20 +37,24 @@ project-1/
 │       ├── outputs.tf
 │       └── provider.tf
 │
-├── TERRAFORM-COMPARTMENT/
-│   ├── main.tf
-│   ├── variables.tf
-│   ├── outputs.tf
-│   ├── provider.tf
-│   └── terraform.tfvars
-│
 ├── COMPARTMENT-IMPORT-TERRAFORM/
 │   ├── data.tf
 │   ├── main.tf
 │   ├── variables.tf
 │   ├── outputs.tf
-│   ├── provider.tf
-│   └── terraform.tfvars
+│   └── provider.tf
+│
+├── COMPARTMENT-TERRAFORM/
+│   ├── main.tf
+│   ├── variables.tf
+│   ├── outputs.tf
+│   └── provider.tf
+│
+├── COMPARTMENT-WORKSPACE-TERRAFORM/
+│   ├── main.tf
+│   ├── variables.tf
+│   ├── outputs.tf
+│   └── provider.tf
 │
 ├── .gitignore
 └── README.md
