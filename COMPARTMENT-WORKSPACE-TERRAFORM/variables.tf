@@ -33,3 +33,7 @@ variable "region" {
 variable "compartment_id" {
   type = string
 }
+
+variable "ssh_pub_key" {
+  type = map(string)
+}
