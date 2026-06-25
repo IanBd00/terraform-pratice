@@ -84,6 +84,26 @@ resource "oci_core_security_list" "this" {
       }
     }
 
+    ingress_security_rules {
+      source = "0.0.0.0/0"
+      protocol = "6"
+
+      tcp_options {
+        min = "3000"
+        max = "3000"
+      }
+    }
+
+    ingress_security_rules {
+      source = "0.0.0.0/0"
+      protocol = "6"
+
+      tcp_options {
+        min = "10051"
+        max = "10051"
+      }
+    }
+
     egress_security_rules {
       destination = "0.0.0.0/0"
       protocol = "all"
@@ -97,6 +117,7 @@ resource "oci_core_subnet" "public" {
     vcn_id = oci_core_vcn.this.id
     cidr_block = var.public_subnet_cidr
     route_table_id = oci_core_route_table.public.id
+    security_list_ids = [ oci_core_security_list.this.id ]
 }
 
 resource "oci_core_subnet" "private" {
@@ -106,4 +127,5 @@ resource "oci_core_subnet" "private" {
     cidr_block = var.private_subnet_cidr
     route_table_id = oci_core_route_table.private.id
     prohibit_public_ip_on_vnic = true
+    security_list_ids = [ oci_core_security_list.this.id ]
 }
