@@ -37,6 +37,13 @@ project-1/
 │       ├── outputs.tf
 │       └── provider.tf
 │
+├── COMPARTMENT-DOCKER-TERRAFORM/
+│   ├── data.tf
+│   ├── main.tf
+│   ├── variables.tf
+│   ├── outputs.tf
+│   └── provider.tf
+|
 ├── COMPARTMENT-IMPORT-TERRAFORM/
 │   ├── data.tf
 │   ├── main.tf
@@ -44,6 +51,19 @@ project-1/
 │   ├── outputs.tf
 │   └── provider.tf
 │
+├── COMPARTMENT-OBSERVABILIDADE-TERRAFORM/
+│   ├── data.tf
+│   ├── main.tf
+│   ├── variables.tf
+│   ├── outputs.tf
+│   └── provider.tf
+|
+├── COMPARTMENT-OKE-TERRAFORM/
+│   ├── main.tf
+│   ├── variables.tf
+│   ├── outputs.tf
+│   └── provider.tf
+|
 ├── COMPARTMENT-TERRAFORM/
 │   ├── main.tf
 │   ├── variables.tf
